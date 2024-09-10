@@ -4,13 +4,11 @@ from PIL import Image
 import imagehash
 import cv2
 import os
-import datetime  
-import json
 import numpy as np
 
-from custom.runOCR import runOCR
-from custom.global_data import checkpoint_file,class_names
-from custom.storing import store_image,store_face
+from custom.old_python_files.runOCR import runOCR
+from custom.old_python_files.global_data import checkpoint_file,class_names
+from custom.old_python_files.storing import store_image,store_face
 
 predicts=[]
 
@@ -47,6 +45,7 @@ def process_face(image,image_name, x1, y1, x2, y2, acc, class_name):
 
 
 def run(img):
+	print(f'/initialize_run/run(img) Processing file: {img}')
 	try:
 		ocrdict={}
 		ocrdict.clear()
